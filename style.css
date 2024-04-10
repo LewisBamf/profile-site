@@ -1,0 +1,28 @@
+:root {
+    --bgcl: hsl(40, 29%, 90%);
+    --seccondary-color: hsl(0, 100%, 65%);
+}
+
+@import url(fonts.css);
+
+body{
+    background-color: var(--bgcl);
+    width: 100vw;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-width: 0px;
+    align-items: center;
+    justify-content: center;
+    font-family: "PixelifySans", sans-serif;
+}
+
+
+
+/* title code */
+
+.title {
+    font-size: 40px;
+    width: auto;
+    height: auto;
+    color: var(--seccondary-color);
+}
