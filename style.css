@@ -1,12 +1,12 @@
 :root {
-    --bgcl: hsl(40, 29%, 90%);
-    --seccondary-color: hsl(0, 100%, 65%);
+    --bgcl: hsl(0, 0%, 96%);
+    --seccondary-color: hsl(0, 84%, 64%);
 }
 
 @import url(fonts.css);
 
 body{
-    background-color: var(--bgcl);
+    background-color: var(--seccondary-color);
     width: 100vw;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -14,15 +14,100 @@ body{
     align-items: center;
     justify-content: center;
     font-family: "PixelifySans", sans-serif;
+    font-weight: bold;
+
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
 }
 
+::-webkit-scrollbar{
+    display: none;
+    height: 0px;
+    width: 0px;
+}
 
 
 /* title code */
 
 .title {
     font-size: 40px;
-    width: auto;
-    height: auto;
-    color: var(--seccondary-color);
+    width: max-content;
+    height: max-content;
+    color: var(--bgcl);
+    text-align: center;
+    margin-left: calc(50vw - (max-content / 2));
+    background-color: var(--seccondary-color);
 }
+
+  /* gird layout stuff*/
+
+  .page-layout-grid{
+    display: grid;
+    height: 100vh;
+    width: 90vw;
+    grid-template-columns: 1;
+    grid-template-rows: 5;
+    justify-content: center;
+    align-content: center;
+    margin-top: 0px;
+    margin-left: 2.5%;
+    scrollbar-width: 0px;
+    transform: translate(5vw, 0px);
+  }
+
+  .grid-item:nth-child(1){
+    background-color: var(--bgcl);
+    height: fit-content;
+    width: 90vw;
+  }
+
+  .grid-item:nth-child(2){
+    background-color: var(--bgcl);
+    height: fit-content;
+    width: 90vw;
+  }
+
+  .grid-item:nth-child(3){
+    background-color: var(--seccondary-color);
+    height: fit-content;
+    width: 90vw;
+  }
+
+  .grid-item:nth-child(4){
+    background-color: var(--bgcl);
+    height: fit-content;
+    width: 90vw;
+  }
+
+  .grid-item:nth-child(5){
+    background-color: var(--seccondary-color);
+    height: fit-content;
+    width: 90vw;
+  }
+
+  /* navbar */
+
+  .navbar {
+    width: 5vw;
+    min-width: 50px;
+    max-width: 100px;
+    height: 100vw;
+    position: fixed;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    padding: 0px;
+    align-items: center;
+    margin-right: 10px;
+    box-shadow: 0px 0px 10px hsl(0, 0, 0);
+  }
+
+  .logo{
+    position: absolute;
+    margin: 0px;
+    width: 50%;
+    margin-top: 30%;
+    
+  }
