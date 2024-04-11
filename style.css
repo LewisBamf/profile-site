@@ -1,9 +1,12 @@
 :root {
     --bgcl: hsl(0, 0%, 96%);
     --seccondary-color: hsl(0, 84%, 64%);
+    --blue-color: hsl(210, 32%, 28%);
+    --Lightblue-color: hsl(210, 32%, 50%);
+    --dark-color: hsl(0, 0%, 7%);
 }
 
-@import url(fonts.css);
+
 
 body{
     background-color: var(--seccondary-color);
@@ -11,10 +14,9 @@ body{
     overflow-x: hidden;
     overflow-y: scroll;
     scrollbar-width: 0px;
-    align-items: center;
-    justify-content: center;
-    font-family: "PixelifySans", sans-serif;
-    font-weight: bold;
+    font-family: "Rubik", sans-serif;
+    font-weight: normal;
+    background-color: var(--blue-color);
 
     padding: 0px;
     margin: 0px;
@@ -28,86 +30,121 @@ body{
 }
 
 
-/* title code */
-
-.title {
-    font-size: 40px;
-    width: max-content;
-    height: max-content;
-    color: var(--bgcl);
-    text-align: center;
-    margin-left: calc(50vw - (max-content / 2));
-    background-color: var(--seccondary-color);
-}
 
   /* gird layout stuff*/
 
+.grid-position{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
   .page-layout-grid{
     display: grid;
-    height: 100vh;
-    width: 90vw;
-    grid-template-columns: 1;
-    grid-template-rows: 5;
+    width: 80vw;
+    max-width: 1200px;
+    grid-template-columns: repeat(1, 100%);
+    grid-template-rows: repeat(5, auto);
     justify-content: center;
-    align-content: center;
-    margin-top: 0px;
-    margin-left: 2.5%;
+    align-items: start;
     scrollbar-width: 0px;
-    transform: translate(5vw, 0px);
+    position: relative;
+    overflow: hidden;
+    overflow-wrap: break-word;
+  }
+
+  .grid-item{
+    background-color: var(--blue-color);
+    width: 100%;
+    height: fit-content;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    padding: 20px;
   }
 
   .grid-item:nth-child(1){
-    background-color: var(--bgcl);
-    height: fit-content;
-    width: 90vw;
+    color: var(--bgcl);
+    font-size: 40px;
+    
   }
 
   .grid-item:nth-child(2){
-    background-color: var(--bgcl);
-    height: fit-content;
-    width: 90vw;
+    background-color: var(--bgcl)
   }
 
   .grid-item:nth-child(3){
-    background-color: var(--seccondary-color);
-    height: fit-content;
-    width: 90vw;
+    background-color: var(--Lightblue-color);
   }
 
   .grid-item:nth-child(4){
     background-color: var(--bgcl);
-    height: fit-content;
-    width: 90vw;
   }
 
   .grid-item:nth-child(5){
-    background-color: var(--seccondary-color);
-    height: fit-content;
-    width: 90vw;
+    background-color: var(--Lightblue-color);
+  }
+
+  section{
+    font-weight: 600;
   }
 
   /* navbar */
 
   .navbar {
-    width: 5vw;
+    width: 5%;
     min-width: 50px;
     max-width: 100px;
-    height: 100vw;
-    position: fixed;
-    background-color: aliceblue;
-    display: flex;
-    flex-direction: column;
+    height: 100%;
     margin: 0px;
     padding: 0px;
-    align-items: center;
-    margin-right: 10px;
-    box-shadow: 0px 0px 10px hsl(0, 0, 0);
+    z-index: 1000;
+    position: fixed;
+    background-color: var(--bgcl);
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    justify-content: center;
+    box-shadow: 5px 0px 5px rgba(0, 0, 0, 1);
+  }
+
+  .nav-item {
+    border: 3px solid black;
+    display: flex;
+    justify-content: center;
+      align-items: center;
+  }
+
+  @media only screen and (max-width: 600px){
+    .navbar{
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(1, 1fr);
+      height: 5%;
+      min-height: 50px;
+      max-height: 100px;
+      width: 100%;
+      margin: 0px;
+      box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    .logo{
+      margin-top: 0%;
+      margin-left: -40%;
+      height: 60%;
+      width: fit-content;
+      transform: translate(0px, -200px);
+
+    }
+
+    h1{
+      font-size: 30px;
+    }
   }
 
   .logo{
     position: absolute;
     margin: 0px;
     width: 50%;
-    margin-top: 30%;
-    
+    z-index: 1001;
   }

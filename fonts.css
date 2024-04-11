@@ -5,3 +5,11 @@
     font-display: swap;
     src: url('PixelifySans.ttf') format('truetype');
   }
+
+  @font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('Rubik.ttf') format('truetype');
+  }
