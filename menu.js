@@ -1,6 +1,10 @@
 document.addEventListener("DOMContentLoaded", function(){
 
 const menu = document.getElementById("menu-icon");
+const menuSpace = document.getElementById("menu-space")
+const navbar = document.getElementById("navbar")
+const NBheight = navbar.clientHeight 
+const NBwidth = navbar.clientWidth - 10
 let toggled = false;
 console.log(toggled)
 
@@ -12,6 +16,12 @@ if(toggled == false){
 //when opening do this
     toggled = true;
     console.log(toggled)
+
+    if(window.innerWidth < "600"){
+        menuSpace.style.transform = "translate(0%, 5vh)"
+    } else {
+        menuSpace.style.transform = "translate(5vw, 0%)"
+    }
 
     let lines = document.querySelectorAll(".menu-icon .line");
 
@@ -35,6 +45,11 @@ if(toggled == false){
     toggled = false
     console.log(toggled)
 
+    if(window.innerWidth < "600"){
+        menuSpace.style.transform = "translate(0%, -100%)"
+    } else {
+        menuSpace.style.transform = "translate(-100%, 0%)"
+    }
     let lines = document.querySelectorAll(".menu-icon .line");
 
     lines.forEach((line, index) => {
